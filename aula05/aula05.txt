@@ -1,1 +1,101 @@
 
+Conta de banco
+
+atributos 
+----------------
++numConta
+#tipo
+-dono
+-saldo
+-status
+
+metodos
+----------------
+abrirConta()
+fecharConta()
+depositar()
+sacar()
+pagarMensal()
+
+Get e Set para todos os atribustos
+
+
+Classe ContaBanco 
+---------------------------------------
+//atributos
+publico numConta: inteiro
+protegido tipo: caractere
+privado dono: caractere;
+privado saldo: real
+privado status: logico
+
+//metodos
+
+publico metodo abrirConta(t:caractere)
+ setTipo(t)
+ setStatus(verdadeiro)
+ se (t = "CC") entao
+    saldo = 50
+ senao se (t = "CP") entao
+    saldo = 150
+----------------------------------------
+publico metodo fecharConta()
+ se (saldo > 0) entao
+  Escreva("Conta com dinheiro")
+senao se (salvo < 0) entao
+  Escreva("Conta em débito")
+senao 
+    setStatus(false)
+----------------------------------------
+publico metodo depositar(v:Real)
+    se (status = verdadeiro) entao
+        setSaldo(getSaldo() + v)
+    senao 
+        Escreva("Impossível depositar")
+----------------------------------------
+publico metodo sacar(v:Real)
+    se (getStatus() = verdadeiro) entao 
+        se (getSaldo() > v) entao
+            setSaldo(getSaldo() - v)
+        senao 
+            Escreva("Saldo insuficiente")
+    senao 
+        Escreva("Impossível sacar")
+----------------------------------------
+publico metodo pagarMensal()
+var v: Real
+se (tipo = "CC") entao  
+    v = 12
+senao se (tipo = "CP") entao
+    v = 20
+    se (status = verdadeiro) entao 
+        setSaldo(getSaldo() - v)
+    senao
+        Escreva("Saldo insuficiente")
+    senao
+        Escreva ("Imposivel pagar)
+
+Metodo especiais
+----------------------------------------
+publico Metodo Construtor()
+ saldo = 0
+ status = false
+
+publico Metodo setNumConta(n:inteiro)
+     numConta = n
+
+publico Metodo getNumConta()
+    returna numConta
+
+publico Metodo setSaldo(s:real)
+    saldo = s;
+
+publico Metodo getSaldo()
+    return = saldo
+
+publico Metodo setStatus(s:logico)
+    status = s
+
+publico Metodo getStatus()
+    return = status
+    
